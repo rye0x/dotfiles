@@ -1,0 +1,13 @@
+#!/bin/bash
+DOTFILES="$HOME/.dotfiles"
+
+# Zsh
+ln -sf "$DOTFILES/.zshrc" "$HOME/.zshrc"
+ln -sf "$DOTFILES/.zshenv" "$HOME/.zshenv"
+ln -sf "$DOTFILES/.zprofile" "$HOME/.zprofile"
+
+# Config
+ln -sf "$DOTFILES/.config/ghostty" "$HOME/.config/ghostty"
+ln -sf "$DOTFILES/.config/nvim" "$HOME/.config/nvim"
+
+echo "Dotfiles linked."
