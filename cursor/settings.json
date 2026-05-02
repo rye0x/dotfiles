@@ -1,0 +1,13 @@
+{
+    "remote.SSH.remotePlatform": {
+        "ICTI-ubuntu": "linux",
+        "icti": "linux",
+        "icti-orbstack": "linux"
+    },
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.layoutControl.enabled": false,
+    "workbench.activityBar.orientation": "vertical",
+    "window.titleBarStyle": "custom",
+    "window.newWindowProfile": "dev"
+}
