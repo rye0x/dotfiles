@@ -11,3 +11,6 @@ ln -sf "$DOTFILES/.config/ghostty" "$HOME/.config/ghostty"
 ln -sf "$DOTFILES/.config/nvim" "$HOME/.config/nvim"
 
 echo "Dotfiles linked."
+ln -sf "$DOTFILES/.config/zed" "$HOME/.config/zed"
+ln -sf "$DOTFILES/cursor/settings.json" "$HOME/Library/Application Support/Cursor/User/settings.json"
+ln -sf "$DOTFILES/cursor/keybindings.json" "$HOME/Library/Application Support/Cursor/User/keybindings.json"
