@@ -1,263 +1,279 @@
 [
-	// Terminal
-	{
-		"context": "Workspace",
-		"bindings": {
-			"ctrl-/": "workspace::ToggleBottomDock",
-			"cmd-1": ["pane::ActivateItem", 0],
-			"cmd-2": ["pane::ActivateItem", 1],
-			"cmd-3": ["pane::ActivateItem", 2],
-			"cmd-4": ["pane::ActivateItem", 3],
-			"cmd-5": ["pane::ActivateItem", 4],
-			"cmd-6": ["pane::ActivateItem", 5],
-			"cmd-7": ["pane::ActivateItem", 6],
-			"cmd-8": ["pane::ActivateItem", 7],
-			"cmd-9": ["pane::ActivateItem", 8],
-			"cmd-0": "pane::ActivateLastItem",
-			"ctrl-1": null,
-			"ctrl-2": null,
-			"ctrl-3": null,
-			"ctrl-4": null,
-			"ctrl-5": null,
-			"ctrl-6": null,
-			"ctrl-7": null,
-			"ctrl-8": null,
-			"ctrl-9": null,
-			"ctrl-0": null
-		}
-	},
-	{
-		"context": "Editor",
-		"bindings": {
-            "ctrl-1": null,
-            "ctrl-2": null,
-            "ctrl-3": null,
-            "ctrl-4": null,
-            "ctrl-5": null,
-            "ctrl-6": null,
-            "ctrl-7": null,
-            "ctrl-8": null,
-            "ctrl-9": null,
-            "ctrl-0": null
-		},
-	},
-
-	// Window's navigation
-	{
-		"context": "Dock || Terminal || Editor",
-		"bindings": {
-			// Window's motions
-			"ctrl-h": "workspace::ActivatePaneLeft",
-			"ctrl-l": "workspace::ActivatePaneRight",
-			"ctrl-k": "workspace::ActivatePaneUp",
-			"ctrl-j": "workspace::ActivatePaneDown"
-		}
-	},
-	{
-		"context": "GitPanel",
-		"bindings": {
-			"q": "git_panel::Close"
-		}
-	},
-	{
-		"context": "AgentPanel",
-		"bindings": {
-			"ctrl-\\": "workspace::ToggleRightDock",
-			"cmd-k": "workspace::ToggleRightDock"
-		}
-	},
-	// File panel (netrw)
-	{
-		"context": "ProjectPanel && not_editing",
-		"bindings": {
-			"a": "project_panel::NewFile",
-			"A": "project_panel::NewDirectory",
-			"r": "project_panel::Rename",
-			"d": "project_panel::Delete",
-			"x": "project_panel::Cut",
-			"c": "project_panel::Copy",
-			"p": "project_panel::Paste",
-			"q": "workspace::ToggleLeftDock",
-			"space e": "workspace::ToggleLeftDock",
-			":": "command_palette::Toggle",
-			"%": "project_panel::NewFile",
-			"/": "project_panel::NewSearchInDirectory",
-			"enter": "project_panel::OpenPermanent",
-			"escape": "project_panel::ToggleFocus",
-			"h": "project_panel::CollapseSelectedEntry",
-			"j": "menu::SelectNext",
-			"k": "menu::SelectPrevious",
-			"l": "project_panel::ExpandSelectedEntry",
-			"o": "project_panel::OpenPermanent",
-			"shift-d": "project_panel::Delete",
-			"shift-r": "project_panel::Rename",
-			"t": "project_panel::OpenPermanent",
-			"v": "project_panel::OpenPermanent",
-			"shift-g": "menu::SelectLast",
-			"g g": "menu::SelectFirst",
-			"-": "project_panel::SelectParent",
-			"ctrl-6": "pane::AlternateFile"
-		}
-	},
-	// Empty pane
-	{
-		"context": "EmptyPane || SharedScreen",
-		"bindings": {
-			"space space": "file_finder::Toggle",
-			"space f n": "workspace::NewFile",
-			"space f p": "projects::OpenRecent",
-			"space s g": "workspace::NewSearch",
-			"space q q": "zed::Quit"
-		}
-	},
-	{
-		"context": "Editor && VimControl && !VimWaiting && !menu",
-		"bindings": {
-			// Refactoring
-			"space c r ": "editor::Rename",
-			// Chat with AI
-			"space a a": "agent::ToggleFocus",
-			"ctrl-\\": "workspace::ToggleRightDock",
-			"cmd-k": "workspace::ToggleRightDock",
-			"space a e": "assistant::InlineAssist",
-			"cmd-l": "assistant::InlineAssist",
-			"space a t": "workspace::ToggleRightDock",
-			// Git
-			"space g g": [
-				"task::Spawn",
-				{
-					"task_name": "lazygit",
-					"reveal_target": "center"
-				}
-			],
-			"space g h d": "editor::ExpandAllDiffHunks",
-			"space g h D": "git::Diff",
-			"space g h r": "git::Restore",
-			"space g  h R": "git::RestoreFile",
-			// Toggle inlay hints
-			"space u i": "editor::ToggleInlayHints",
-			// Toggle soft wrap
-			"space u w": "editor::ToggleSoftWrap",
-			// Open markdown preview
-			"space m p": "markdown::OpenPreview",
-			"space m P": "markdown::OpenPreviewToTheSide",
-			// Open recent project
-			"space f p": "projects::OpenRecent",
-			// Search word under cursor
-			"space s w": "buffer_search::Deploy",
-			"space s W": "pane::DeploySearch",
-			// Tab things
-			"space 1": ["pane::ActivateItem", 0],
-			"space 2": ["pane::ActivateItem", 1],
-			"space 3": ["pane::ActivateItem", 2],
-			"space 4": ["pane::ActivateItem", 3],
-			"space 5": ["pane::ActivateItem", 4],
-			"space 6": ["pane::ActivateItem", 5],
-			"space 7": ["pane::ActivateItem", 6],
-			"space 8": ["pane::ActivateItem", 7],
-			"space 9": ["pane::ActivateItem", 8],
-			"space 0": "pane::ActivateLastItem",
-			"] b": "pane::ActivateNextItem",
-			"[ b": "pane::ActivatePreviousItem",
-			"space ,": "tab_switcher::Toggle",
-			// Buffer management
-			"space b b": "pane::AlternateFile",
-			"space b d": "pane::CloseActiveItem",
-			"space b q": "pane::CloseOtherItems",
-			"space b n": "workspace::NewFile",
-			// Search
-			"space s b": "vim::Search",
-			"space s g": "workspace::NewSearch",
-			"space f n": "workspace::NewFile",
-			"space /": "workspace::NewSearch",
-			// Git
-			"space g b": "git::Blame",
-			// LSP & Code actions
-			"space c a": "editor::ToggleCodeActions",
-			"space s d": "diagnostics::Deploy",
-			"space s s": "outline::Toggle",
-			// Format
-			"space c f": "editor::Format",
-			// File explorer
-			"space e": "workspace::ToggleLeftDock",
-			// File finder
-			"space f f": "file_finder::Toggle",
-			"space space": "file_finder::Toggle",
-			// Quit
-			"space q q": "zed::Quit",
-			// Terminal
-			"space t": "workspace::ToggleBottomDock",
-			// Window management
-			"space w s": "pane::SplitDown",
-			"space w v": "pane::SplitRight",
-			"space -": "pane::SplitDown",
-			"space |": "pane::SplitRight",
-			"space w c": "pane::CloseAllItems",
-			"space w d": "pane::CloseAllItems",
-			// Jump to hunks
-			"] h": "editor::GoToHunk",
-			"[ h": "editor::GoToPreviousHunk",
-			"] c": "editor::GoToHunk",
-			"[ c": "editor::GoToPreviousHunk",
-			// Jump to diagnostic
-			"] d": "editor::GoToDiagnostic",
-			"[ d": "editor::GoToPreviousDiagnostic",
-			"] e": "editor::GoToDiagnostic",
-			"[ e": "editor::GoToPreviousDiagnostic",
-			// Excerpts
-			"] q": "editor::MoveToStartOfNextExcerpt",
-			"[ q": "editor::MoveToStartOfExcerpt"
-		}
-	},
-	{
-		"context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
-		"bindings": {
-			"shift-j": "editor::MoveLineDown",
-			"shift-k": "editor::MoveLineUp"
-		}
-	},
-	// Center cursor on scroll
-	{
-		"context": "VimControl && !menu",
-		"bindings": {
-			"ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
-			"ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
-			"n": ["workspace::SendKeystrokes", "n z z z v"],
-			"shift-n": ["workspace::SendKeystrokes", "shift-n z z z v"],
-			"shift-g": ["workspace::SendKeystrokes", "shift-g z z"],
-			"g r": "editor::FindAllReferences"
-		}
-	},
-	{
-		"context": "vim_operator == d",
-		"bindings": {
-			"o": "editor::ExpandAllDiffHunks",
-			"r": "git::Restore"
-		}
-	},
-	{
-		"context": "vim_mode == normal || vim_mode == visual",
-		"bindings": {
-			"s": "vim::PushSneak",
-			"S": "vim::PushSneakBackward"
-		}
-	},
-	{
-		"context": "vim_operator == a || vim_operator == i || vim_operator == cs",
-		"bindings": {
-			"b": "vim::AnyBrackets"
-		}
-	},
- {
-  "context": "Workspace",
-  "bindings": {
-   "cmd-shift-g": "git_panel::ToggleFocus"
-  }
- },
- {
-  "context": "Workspace",
-  "unbind": {
-   "ctrl-shift-g": "git_panel::ToggleFocus"
-  }
- }
+    {
+        "context": "Workspace",
+        "bindings": {
+            "ctrl-/": "workspace::ToggleBottomDock",
+            "cmd-\\": "terminal_panel::Toggle",
+            "cmd-shift-g": "git_panel::ToggleFocus",
+            "cmd-1": ["pane::ActivateItem", 0],
+            "cmd-2": ["pane::ActivateItem", 1],
+            "cmd-3": ["pane::ActivateItem", 2],
+            "cmd-4": ["pane::ActivateItem", 3],
+            "cmd-5": ["pane::ActivateItem", 4],
+            "cmd-6": ["pane::ActivateItem", 5],
+            "cmd-7": ["pane::ActivateItem", 6],
+            "cmd-8": ["pane::ActivateItem", 7],
+            "cmd-9": ["pane::ActivateItem", 8],
+            "cmd-0": "pane::ActivateLastItem"
+        }
+    },
+    {
+        "context": "Workspace",
+        "unbind": {
+            "ctrl-shift-g": "git_panel::ToggleFocus",
+            "ctrl-`": "terminal_panel::Toggle"
+        }
+    },
+    {
+        "context": "Dock || Terminal || Editor",
+        "bindings": {
+            "ctrl-h": "workspace::ActivatePaneLeft",
+            "ctrl-l": "workspace::ActivatePaneRight",
+            "ctrl-k": "workspace::ActivatePaneUp",
+            "ctrl-j": "workspace::ActivatePaneDown"
+        }
+    },
+    {
+        "context": "GitPanel",
+        "bindings": {
+            "q": "git_panel::Close"
+        }
+    },
+    // File panel
+    {
+        "context": "ProjectPanel && not_editing",
+        "bindings": {
+            "h": "project_panel::CollapseSelectedEntry",
+            "j": "menu::SelectNext",
+            "k": "menu::SelectPrevious",
+            "l": "project_panel::ExpandSelectedEntry",
+            "shift-g": "menu::SelectLast",
+            "g g": "menu::SelectFirst",
+            "-": "project_panel::SelectParent",
+            "a": "project_panel::NewFile",
+            "A": "project_panel::NewDirectory",
+            "r": "project_panel::Rename",
+            "shift-r": "project_panel::Rename",
+            "d": "project_panel::Delete",
+            "shift-d": "project_panel::Delete",
+            "x": "project_panel::Cut",
+            "c": "project_panel::Copy",
+            "p": "project_panel::Paste",
+            "%": "project_panel::NewFile",
+            "enter": "project_panel::OpenPermanent",
+            "o": "project_panel::OpenPermanent",
+            "t": "project_panel::OpenPermanent",
+            "v": "project_panel::OpenPermanent",
+            "/": "project_panel::NewSearchInDirectory",
+            "q": "workspace::ToggleLeftDock",
+            "space e": "workspace::ToggleLeftDock",
+            "escape": "project_panel::ToggleFocus",
+            ":": "command_palette::Toggle",
+            "ctrl-6": "pane::AlternateFile"
+        }
+    },
+    // Empty pane, keybindings available when there is no active editor
+    {
+        "context": "EmptyPane || SharedScreen",
+        "bindings": {
+            "space space": "file_finder::Toggle",
+            "space f n": "workspace::NewFile",
+            "space f p": "projects::OpenRecent",
+            "space s g": "workspace::NewSearch"
+            // "space q q": "zed::Quit"
+        }
+    },
+    // File explorer & finder
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            "space e": "workspace::ToggleLeftDock",
+            "space f f": "file_finder::Toggle",
+            "space space": "file_finder::Toggle",
+            "space f n": "workspace::NewFile",
+            "space f p": "projects::OpenRecent"
+        }
+    },
+    // Buffer management
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            "shift-h": "pane::ActivatePreviousItem",
+            "shift-l": "pane::ActivateNextItem",
+            "shift-q": "pane::CloseActiveItem",
+            "ctrl-q": "pane::CloseActiveItem",
+            "space b b": "pane::AlternateFile",
+            "space b d": "pane::CloseActiveItem",
+            "space b q": "pane::CloseOtherItems",
+            "space b n": "workspace::NewFile",
+            "space 1": ["pane::ActivateItem", 0],
+            "space 2": ["pane::ActivateItem", 1],
+            "space 3": ["pane::ActivateItem", 2],
+            "space 4": ["pane::ActivateItem", 3],
+            "space 5": ["pane::ActivateItem", 4],
+            "space 6": ["pane::ActivateItem", 5],
+            "space 7": ["pane::ActivateItem", 6],
+            "space 8": ["pane::ActivateItem", 7],
+            "space 9": ["pane::ActivateItem", 8],
+            "space 0": "pane::ActivateLastItem",
+            "] b": "pane::ActivateNextItem",
+            "[ b": "pane::ActivatePreviousItem",
+            "space ,": "tab_switcher::Toggle"
+        }
+    },
+    // Window management
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            "space w w": "workspace::ActivatePreviousPane",
+            "space w s": "pane::SplitDown",
+            "space w r": "pane::SplitRight",
+            "space -": "pane::SplitDown",
+            "space |": "pane::SplitRight",
+            "space w c": "pane::CloseAllItems",
+            "space w d": "pane::CloseActiveItem",
+            "ctrl-shift-k": "vim::ResizePaneUp",
+            "ctrl-shift-j": "vim::ResizePaneDown",
+            "ctrl-shift-h": "vim::ResizePaneLeft",
+            "ctrl-shift-l": "vim::ResizePaneRight"
+        }
+    },
+    // Search
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            "space s b": "vim::Search",
+            "space s g": "workspace::NewSearch",
+            "space s w": "buffer_search::Deploy",
+            "space s W": "pane::DeploySearch",
+            "space /": "workspace::NewSearch"
+        }
+    },
+    // LSP
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            "g d": "editor::GoToDefinition",
+            "g D": "editor::GoToDefinitionSplit",
+            "g i": "editor::GoToImplementation",
+            "g I": "editor::GoToImplementationSplit",
+            "g t": "editor::GoToTypeDefinition",
+            "g T": "editor::GoToTypeDefinitionSplit",
+            "g r": "editor::FindAllReferences",
+            "s s": "outline::Toggle",
+            "s S": "project_symbols::Toggle",
+            "space c a": "editor::ToggleCodeActions",
+            "space c r ": "editor::Rename",
+            "space c f": "editor::Format",
+            "space s d": "diagnostics::Deploy",
+            "space s s": "outline::Toggle"
+        }
+    },
+    // Git
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            "space g g": ["task::Spawn", { "task_name": "lazygit", "reveal_target": "center" }],
+            "space g b": "git::Blame",
+            "space g h d": "editor::ExpandAllDiffHunks",
+            "space g h D": "git::Diff",
+            "space g h r": "git::Restore",
+            "space g  h R": "git::RestoreFile",
+            "] h": "editor::GoToHunk",
+            "[ h": "editor::GoToPreviousHunk",
+            "] c": "editor::GoToHunk",
+            "[ c": "editor::GoToPreviousHunk"
+        }
+    },
+    // Diagnostics & excerpts navigation
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            "] d": "editor::GoToDiagnostic",
+            "[ d": "editor::GoToPreviousDiagnostic",
+            "] e": ["editor::GoToDiagnostic", { "severity": "error" }],
+            "[ e": ["editor::GoToPreviousDiagnostic", { "severity": "error" }],
+            "] w": ["editor::GoToDiagnostic", { "severity": "warning" }],
+            "[ w": ["editor::GoToPreviousDiagnostic", { "severity": "warning" }],
+            "] H": ["editor::GoToDiagnostic", { "severity": "hint" }],
+            "[ H": ["editor::GoToPreviousDiagnostic", { "severity": "hint" }],
+            "] q": "editor::MoveToStartOfNextExcerpt",
+            "[ q": "editor::MoveToStartOfExcerpt"
+        }
+    },
+    // Autocomplete suggestion navigation
+    {
+        "context": "Editor && showing_completions",
+        "bindings": {
+            "ctrl-j": "editor::ContextMenuNext",
+            "ctrl-k": "editor::ContextMenuPrevious"
+        }
+    },
+    // Menu & picker navigation (file finder, command palette, etc.)
+    {
+        "context": "menu",
+        "bindings": {
+            "ctrl-j": "menu::SelectNext",
+            "ctrl-k": "menu::SelectPrevious"
+        }
+    },
+    // Toggles & misc
+    {
+        "context": "Editor && VimControl && !VimWaiting && !menu",
+        "bindings": {
+            "space u i": "editor::ToggleInlayHints",
+            "space u w": "editor::ToggleSoftWrap",
+            "space m p": "markdown::OpenPreview",
+            "space m P": "markdown::OpenPreviewToTheSide",
+            "space t": "workspace::ToggleBottomDock",
+            "space q q": "workspace::CloseWindow"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+        "bindings": {
+            "shift-j": "editor::MoveLineDown",
+            "shift-k": "editor::MoveLineUp"
+        }
+    },
+    // Keep cursor centered after scroll/search jumps
+    {
+        "context": "VimControl && !menu",
+        "bindings": {
+            "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+            "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+            "n": ["workspace::SendKeystrokes", "n z z z v"],
+            "shift-n": ["workspace::SendKeystrokes", "shift-n z z z v"],
+            "shift-g": ["workspace::SendKeystrokes", "shift-g z z"]
+        }
+    },
+    // Custom d operator: `do` expand diff hunks, `dr` restore hunk
+    {
+        "context": "vim_operator == d",
+        "bindings": {
+            "o": "editor::ExpandAllDiffHunks",
+            "r": "git::Restore"
+        }
+    },
+    // Sneak motion
+    {
+        "context": "vim_mode == normal || vim_mode == visual",
+        "bindings": {
+            "s": "vim::PushSneak",
+            "S": "vim::PushSneakBackward"
+        }
+    },
+    // `b` as any-bracket text object (ab, ib, csb)
+    {
+        "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+        "bindings": {
+            "b": "vim::AnyBrackets"
+        }
+    },
+    {
+        "context": "Editor",
+        "unbind": {
+            "cmd-\\": "pane::SplitRight"
+        }
+    }
 ]

@@ -7,7 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-	"diff_view_style": "unified",
+	"base_keymap": "Emacs",
+ "ui_font_size": 14.0,
+ "buffer_font_size": 13.0,
+ "buffer_line_height": "comfortable",
+ "theme": "Nord Dark",
+ "cli_default_open_behavior": "new_window",
+ "disable_ai": false,
+ "proxy": "",
+ "diff_view_style": "unified",
  "git_panel": {
   "dock": "left"
  },
@@ -30,8 +38,6 @@
   "active_language_button": true
  },
  "ui_font_family": "JetBrainsMono Nerd Font",
- "ui_font_size": 14.0,
- "buffer_font_size": 12.0,
  "debugger": {
   "dock": "bottom"
  },
@@ -69,15 +75,17 @@
 		},
 	},
 	"icon_theme": {
-  "mode": "light",
+  "mode": "dark",
   "light": "Material Icon Theme",
-  "dark": "Zed (Default)"
+  "dark": "Material Icon Theme"
  },
 	"agent": {
 		"default_profile": "ask",
 		"default_model": {
-			"provider": "zed.dev",
-			"model": "claude-3-7-sonnet-latest"
+			"effort": "high",
+   "enable_thinking": true,
+   "provider": "anthropic",
+			"model": "claude-sonnet-4-6"
 		},
 		"dock": "right"
 	},
@@ -233,7 +241,8 @@
 	},
 	// Use zed commit editor
 	"terminal": {
-		"font_family": "Fira Code",
+		"dock": "right",
+  "font_family": "Fira Code",
   "env": {
 			"EDITOR": "zed --wait"
 		},
@@ -294,6 +303,10 @@
 		"file_icons": true,
 		"folder_icons": true,
 		"git_status": true,
+		"indent_size": 16,
+		"indent_guides": {
+			"show": "always"
+		},
 		"scrollbar": {
 			"show": "never"
 		}
@@ -308,11 +321,6 @@
 	},
 	"buffer_font_family": "Fira Code",
 	"autosave": "on_focus_change",
-	"theme": {
-  "mode": "dark",
-  "light": "Catppuccin Latte",
-  "dark": "Nord Dark"
- },
 	"search": {
 		"whole_word": false,
 		"case_sensitive": true,
@@ -325,8 +333,5 @@
 			"name": "biome"
 		}
 	},
-	"code_actions_on_format": {
-		"source.fixAll.biome": true,
-		"source.organizeImports.biome": true
-	}
+
 }
