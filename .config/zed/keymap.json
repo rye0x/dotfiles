@@ -275,5 +275,15 @@
         "unbind": {
             "cmd-\\": "pane::SplitRight"
         }
+    },
+    {
+        "unbind": {
+            "cmd-q": "zed::Quit"
+        }
+    },
+    {
+        "bindings": {
+            "cmd-q": "workspace::CloseProject"
+        }
     }
 ]
