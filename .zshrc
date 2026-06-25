@@ -19,6 +19,9 @@ source $ZSH/oh-my-zsh.sh
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
+# Rust (after Homebrew so cargo/rustc take priority over Homebrew's rust)
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # PyEnv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
@@ -68,3 +71,10 @@ function git_branch_prompt() {
 }
 
 PROMPT='%F{244}[%D{%H:%M}]%f %F{cyan}%n:%f%F{yellow}%1~%f%F{red}$(git_branch_prompt)%f '
+
+# bun completions
+[ -s "/Users/nathan/.bun/_bun" ] && source "/Users/nathan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
