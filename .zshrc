@@ -78,3 +78,11 @@ PROMPT='%F{244}[%D{%H:%M}]%f %F{cyan}%n:%f%F{yellow}%1~%f%F{red}$(git_branch_pro
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/nathan/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

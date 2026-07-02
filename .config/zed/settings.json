@@ -7,8 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-	"buffer_font_size": 14.0,
+	"agent_ui_font_size": 13.0,
+ "buffer_font_size": 13.0,
  "ui_font_size": 14.0,
+ "disable_ai": true,
+ "completions": {
+  "lsp": true
+ },
+ "auto_indent": "preserve_indent",
  "base_keymap": "Emacs",
  "buffer_line_height": "comfortable",
  "theme": {
@@ -17,7 +23,6 @@
   "dark": "Nord Dark"
  },
  "cli_default_open_behavior": "new_window",
- "disable_ai": false,
  "proxy": "",
  "diff_view_style": "unified",
  "git_panel": {
@@ -220,7 +225,6 @@
 			}
 		}
 	},
-	"tab_size": 4,
 	"telemetry": {
 		"diagnostics": false,
 		"metrics": false
@@ -246,12 +250,12 @@
 	},
 	// Use zed commit editor
 	"terminal": {
-		"dock": "right",
+		"dock": "bottom",
   "font_family": "Fira Code",
   "env": {
 			"EDITOR": "zed --wait"
 		},
-		"font_size": 14,
+		"font_size": 13.0,
 		"detect_venv": {
 			"on": {
 				// Default directories to search for virtual environments, relative
